@@ -23,12 +23,11 @@ def sms_reply():
     else:
         return getLastSavedMsg()
 
+    # Start our TwiML response
+    resp = MessagingResponse()
 
-    # # Start our TwiML response
-    # resp = MessagingResponse()
-    #
-    # # Add a message
-    # resp.message("The Robots are coming! Head for the hills!")
+    # Add a message
+    resp.message("The Robots are coming! Head for the hills!")
 
 def saveMsg(body):
     new_msg = Message(msg=body)
@@ -41,10 +40,11 @@ def saveMsg(body):
 
 
 def getLastSavedMsg():
-    lastSavedMsg = Message.query.limit(1).all()
-    db.session.delete(lastSavedMsg)
-    db.session.commit()
-    return lastSavedMsg
+    # lastSavedMsg = Message.query.limit(1).all()
+    # db.session.delete(lastSavedMsg)
+    # db.session.commit()
+    # return lastSavedMsg
+    return "sss"
 
 if __name__ == "__main__":
     app.run(debug=True)
