@@ -29,24 +29,24 @@ def sms_reply():
     # Add a message
     resp.message("The Robots are coming! Head for the hills!")
 
-    return "haha"
+    return str(resp)
 
-def saveMsg(body):
-    new_msg = Message(msg=body)
-    try:
-        db.session.add(new_msg)
-        db.session.commit()
-        return "Message successfully added to db: " + body
-    except:
-        return "There was an error adding the message"
-
-
-def getLastSavedMsg():
-    # lastSavedMsg = Message.query.limit(1).all()
-    # db.session.delete(lastSavedMsg)
-    # db.session.commit()
-    # return lastSavedMsg
-    return "sss"
+# def saveMsg(body):
+#     new_msg = Message(msg=body)
+#     try:
+#         db.session.add(new_msg)
+#         db.session.commit()
+#         return "Message successfully added to db: " + body
+#     except:
+#         return "There was an error adding the message"
+#
+#
+# def getLastSavedMsg():
+#     # lastSavedMsg = Message.query.limit(1).all()
+#     # db.session.delete(lastSavedMsg)
+#     # db.session.commit()
+#     # return lastSavedMsg
+#     return "sss"
 
 if __name__ == "__main__":
     app.run(debug=True)
