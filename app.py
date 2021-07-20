@@ -20,9 +20,10 @@ def sms_reply():
     # digit polling last saved msg
     else:
         try:
-            temp = msg_list[-1]
-            msg_list = []
-            return temp
+            # temp = msg_list[-1]
+            # msg_list = []
+            # return temp
+            return msg_list[-1]
         except:
             return ""
 
