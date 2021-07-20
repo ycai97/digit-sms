@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'digit-sms'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_5892ecb4f56e4be88e9fd868e9c7c017 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_3344ac76a2ac4e2ab09b6d5220cec6ca }}
