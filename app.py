@@ -29,9 +29,10 @@ def sms_reply():
 
 @app.route("/query", methods=['GET'])
 def query():
-    temp = msg_list[-1]
-    msg_list = []
-    return temp
+    try:
+        return msg_list.pop()
+    except:
+        return ""
 
 
 if __name__ == "__main__":
