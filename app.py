@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 
 app = Flask(__name__)
-msg_str = ""
+msg_list = []
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms_reply():
@@ -15,14 +15,14 @@ def sms_reply():
         resp = MessagingResponse()
         resp.message("ON IT BOSS :)")
         # Append operator response to list
-        msg_str = body
+        msg_list.append(body)
         return str(resp)
     # digit polling last saved msg
     else:
-        temp = msg_str
-        # Reinitialize string after each poll
-        msg_str = ""
-        return temp
+        try:
+            return msg_list[-1]
+        except:
+            return ""
 
 
 if __name__ == "__main__":
